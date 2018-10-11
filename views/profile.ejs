@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PROFILE LOGIN</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="myProfile.css" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+    <style type="text/css" media="screen">
+     #contents{
+       margin-left: 20%;
+      background-color: white;
+       width:35%;
+       padding-bottom: 2%;
+       border:1px solid grey;
+       box-shadow: 2px 2px 5px grey;
+     }
+  a{
+    color:white;
+    margin-top: -10%;
+    margin-left: 80%;
+  }
+  #username{
+    color: white;
+  }
+     #create{
+       margin-left: 25%;
+       margin-top: 5%;
+
+     }
+     #folderName{
+       font-size: 110%;
+       margin-left: 7%;
+     }
+#create{
+  margin-left: 22%;
+}
+
+ textarea{
+       resize: none;
+ }
+#left-most{
+  background-color: black;
+  border-right: :2px solid black;
+  box-shadow: 2px 2px 5px  grey;
+  position: fixed;
+  top:0%;
+  display: flex;
+  flex-direction: column;
+  width:20%;
+  justify-content: space-around;
+  padding-bottom: 40%;
+
+}
+
+#SaveDeleteFile{
+  margin-left: 20%;
+}
+#saveFile{
+  margin-left: 10%;
+  margin-top: 4%;
+}
+#deleteFile{
+  margin-top: 2%;
+  margin-left: 9.5%;
+}
+#saveMe{
+  margin-top: 1%;
+}
+
+
+     #input{
+       margin-top: 15%;
+       margin-left: 10%;
+     }
+    #myButton{
+      margin-left: 63%;
+    }
+    #output{
+      margin-top: 7%;
+      margin-left: 10%;
+    }
+    #current-dir{
+      background-color: black;
+      padding: 2%;
+      color:white;
+      font-weight: bold;
+      font-family: sans-serif;
+      margin-top: 5%;
+    }
+
+#createNewFolder{
+  margin-top: 20%;
+}
+#cur-dir-folders{
+
+  margin-left: -19%;
+
+}
+#languageSelect{
+  margin-top: 4%;
+  margin-left: 2%;
+}
+#cur-dir-files{
+
+  margin-left: -19%;
+}
+[class~=currentDirectories]{
+  margin-top: 10%;
+}
+[class~=currentFiles]{
+  margin-top: 10%;
+}
+      #editor {
+          position:fixed;
+          top: 0%;
+          bottom:-2.5%;
+          left: 55%;
+          right: 0.2%;
+        }
+  [class~=navbars]{
+        font-size: 12px;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light navbars">
+  <a class="navbar-brand" href="#">LOGO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <span class="form-inline my-2 my-lg-0">
+      <%=user.username%>
+
+    </span>
+    <span class="form-inline my-2my-lg-0">
+     Log out
+
+    </span>
+  </div>
+</nav> -->
+
+    <!-- <h1>
+      Hello!! <%=user.username%> , welcome to  the best website is about to be made
+    </h1> -->
+
+    <pre id="editor">
+      <div id="contents">
+      #include< bits/stdc++.h>
+      using namespace std;
+      int main(){
+    }
+  </div>
+
+  </pre>
+
+  <div id="contents">
+    <div id="languageSelect">
+    <button class="btn btn-sm btn-success" >c/cpp</button>
+    <button class="btn btn-sm btn-info" >Java</button>
+    <button class="btn btn-sm btn-primary" >Python</button>
+  </div>
+   <div id="inputBOX">
+   <textarea  cols="45" rows="5"  id="input">
+
+   </textarea>
+    <button class="btn  btn-sm btn-primary" id="myButton">Execute</button>
+  </div>
+  <textarea readonly id="output" cols="40" rows="5"></textarea>
+  </div>
+  <div id="left-most">
+    <span id="username"><%=user.username%></span>
+<a href="/logout" class="glyphicon glyphicon-log-out">logout</a>
+<br>
+   <div id="current-dir">
+     main
+   </div>
+   <div id="createNewFolder">
+      <input type="text" id="folderName" spellcheck="false"></input>
+   <button class="btn btn-sm btn-danger" id="create">Create New Folder</button>
+
+ </div>
+ <div class="list-group-item list-group-item-action active currentDirectories">Directories</div>
+ <ul id='cur-dir-folders' ></ul>
+<div class="list-group-item list-group-item-action active currentFiles">Files</div>
+ <ul id="cur-dir-files" ></ul>
+
+  </div>
+
+
+  <div id="SaveDeleteFile">
+    <div id="saveFile">
+    <button class="btn btn-sm btn-danger" id="saveMe">SAVE FILE</button>
+    <input type="text" id="fileName" spellcheck="false"></input>
+  </div>
+
+  <div id="deleteFile">
+  <button class="btn btn-sm btn-primary" >DELETE FILE</button>
+  <input type="text" id="fileNameDel" spellcheck="false"></input>
+  </div>
+  </div>
+
+
+
+
+    <script src="ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./profile.js"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/twilight");
+        editor.session.setMode("ace/mode/c_cpp");
+    </script>
+
+
+  </body>
+</html>
